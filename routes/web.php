@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//uses of service helper
+Route::get('/test', function () {
+    app()->make('first_service_helper');
+});
+
+Route::get('/test1', function () {
+    return "test";
+});
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
