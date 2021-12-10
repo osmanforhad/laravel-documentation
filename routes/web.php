@@ -18,26 +18,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-//uses of service helper
-Route::get('/test', function () {
-    app()->make('first_service_helper');
+Route::get('/about', function () {
+    return view('about');
 });
 
-Route::get('/test1', function () {
-    return "test";
+Route::get('/contact', function () {
+    return "This is Contact Route";
 });
 
-//uses of facades
-Route::get('/test2', function () {
-    Test::sum();
+Route::any('/profile', function () {
+    return "This is Profile Route by using any method";
 });
 
-//Another example uses of facades
-Route::get('/test3', function () {
-    Test::Multifly();
+Route::match(['get', 'post'], '/portfolio', function () {
+    return "This is Portfolio Route by using match method";
 });
-
 
 
 Route::get('/dashboard', function () {
