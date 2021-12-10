@@ -1,5 +1,6 @@
 <?php
 
+use App\Repositories\Test;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,16 @@ Route::get('/test', function () {
 
 Route::get('/test1', function () {
     return "test";
+});
+
+//uses of facades
+Route::get('/test2', function () {
+    Test::sum();
+});
+
+//Another example uses of facades
+Route::get('/test3', function () {
+    Test::Multifly();
 });
 
 
