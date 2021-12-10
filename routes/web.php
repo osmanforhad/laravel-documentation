@@ -37,6 +37,23 @@ Route::match(['get', 'post'], '/portfolio', function () {
     return "This is Portfolio Route by using match method";
 });
 
+//Route Paramiter
+Route::get('/student/{roll}', function($role) {
+    return "My role is: ".$role;
+});
+
+//Name Route
+Route::get('/team', function () {
+    return "This is Team Route for name Route Example";
+})->name('our.team');
+Route::get('/user', function () {
+    return "This is User Route for name Route Example";
+})->name('register-user');
+
+//Route Hashing
+Route::get(md5('/location'), function () {
+    return "This is location Route for route hashing example";
+})->name('user-location');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

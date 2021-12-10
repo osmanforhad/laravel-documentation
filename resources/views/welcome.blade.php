@@ -43,6 +43,11 @@
                         <li class="list-item"><a href="{{ URL::to('contact') }}">Contact</a></li>
                         <li class="list-item"><a href="{{ url('profile') }}">Profile</a></li>
                         <li class="list-item"><a href="{{ URL::to('portfolio') }}">Portfolio</a></li>
+                        <!-- example of Name Route -->
+                        <li class="list-item"><a href="{{ route('our.team') }}">Team</a></li>
+                        <li class="list-item"><a href="{{ route('register-user') }}">Register user</a></li>
+                        <!-- Example of Route Hashing -->
+                        <li class="list-item"><a href="{{ route('user-location') }}">Location</a></li>
                     </ul>
                 </div>
 
