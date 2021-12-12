@@ -40,10 +40,10 @@
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <ul class="list">
                         <li class="list-item"><a href="{{ url('about') }}">About</a></li>
-                        <li class="list-item"><a href="{{ URL::to('contact') }}">Contact</a></li>
                         <li class="list-item"><a href="{{ url('profile') }}">Profile</a></li>
                         <li class="list-item"><a href="{{ URL::to('portfolio') }}">Portfolio</a></li>
                         <!-- example of Name Route -->
+                        <li class="list-item"><a href="{{ route('contact.us') }}">Contact</a></li>
                         <li class="list-item"><a href="{{ route('our.team') }}">Team</a></li>
                         <li class="list-item"><a href="{{ route('register-user') }}">Register user</a></li>
                         <!-- Example of Route Hashing -->

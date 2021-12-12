@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Example\FirstController;
 use App\Repositories\Test;
 use Illuminate\Support\Facades\Route;
 
@@ -25,9 +26,7 @@ Route::get('/about', function () {
 
 // Route::view('/about', 'about');
 
-Route::get('/contact', function () {
-    return "This is Contact Route";
-});
+Route::get('/contact', [FirstController::class, 'index'])->name('contact.us');
 
 Route::any('/profile', function () {
     return "This is Profile Route by using any method";
