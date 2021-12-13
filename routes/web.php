@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Example\FirstController;
+use App\Http\Controllers\InvokableController;
 use App\Repositories\Test;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,11 @@ Route::get('/user', function () {
 Route::get(md5('/location'), function () {
     return "This is location Route for route hashing example";
 })->name('user-location');
+
+//__Route using Invokabke Method__//
+Route::get('/testing', InvokableController::class);
+
+Route::get('/dist', [FirstController::class, 'dist'])->name('dist')->middleware('country');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
