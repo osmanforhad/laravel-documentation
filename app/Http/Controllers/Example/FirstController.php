@@ -23,4 +23,17 @@ class FirstController extends Controller
     {
         return view('zila');
     }
+
+    //__Student store__//
+public function Teacherstore(Request $request)
+{
+    dd($request->all());
+} 
+
+//__About sotre__//
+public function Aboutstore(Request $request)
+{
+    dd($request->all());
+} 
+
 }

@@ -29,6 +29,10 @@ Route::get('/about', function () {
 
 Route::get('/contact', [FirstController::class, 'index'])->name('contact.us');
 
+//__CSRF token and post method for data store__//
+Route::post('/teacher/store', [FirstController::class, 'Teacherstore'])->name('teacher.store');
+Route::post('/about/store', [FirstController::class, 'Aboutstore'])->name('about.store');
+
 Route::any('/profile', function () {
     return "This is Profile Route by using any method";
 });
