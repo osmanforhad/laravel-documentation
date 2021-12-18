@@ -33,7 +33,13 @@ public function Teacherstore(Request $request)
 //__About sotre__//
 public function Aboutstore(Request $request)
 {
-    dd($request->all());
+    // dd($request->all());
+    // dd($request->email);
+    // dd($request->path());
+    // dd($request->url());
+    // dd($request->ip());
+    dd($request->collect());
+    //  dd($request->input('email'));
 } 
 
 }
