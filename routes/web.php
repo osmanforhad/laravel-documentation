@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Example\FirstController;
+use App\Http\Controllers\Example\SecondController;
 use App\Http\Controllers\InvokableController;
 use App\Repositories\Test;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::get('/contact', [FirstController::class, 'index'])->name('contact.us');
 //__CSRF token and post method for data store__//
 Route::post('/teacher/store', [FirstController::class, 'Teacherstore'])->name('teacher.store');
 Route::post('/about/store', [FirstController::class, 'Aboutstore'])->name('about.store');
+
+Route::get('/testone', [SecondController::class, 'test']);
 
 Route::any('/profile', function () {
     return "This is Profile Route by using any method";

@@ -5,6 +5,13 @@
 
 <h1>Store your about info</h1>
 <br>
+
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
 <form action="{{ route('about.store') }}" method="POST">
     @csrf
     <input type="text" name="name" placeholder="write your name">
