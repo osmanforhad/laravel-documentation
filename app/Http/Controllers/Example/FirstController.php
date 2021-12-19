@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Example;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Example\SecondController;
+use Illuminate\Support\Facades\View;
 
 class FirstController extends Controller
 {
@@ -16,7 +17,15 @@ class FirstController extends Controller
     //__index method__//
     public function index()
     {
-        return view('contact');
+        if(view()->exists('frontend.contact'))
+        {
+            //return View::make('frontend.contact');
+        return view('frontend.contact', ['name' => 'osman forhad']);
+        }
+        else{
+            echo "This page is not available";
+        }
+        
     }
 
     //__dist method__//

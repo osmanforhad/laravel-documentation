@@ -1,4 +1,4 @@
-<h4>This is contact page</h4>
+<h4>Welcome, {{ $name }}</h4>
 
 <form action="{{ route('teacher.store') }}" method="POST">
     @csrf
