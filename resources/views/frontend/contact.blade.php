@@ -8,3 +8,9 @@
     <br>
     <button type="submit">Submit</button>
 </form>
+
+@guest
+<a href="#">login</a>
+@else
+<a href="#">profile</a>
+@endguest
