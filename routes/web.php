@@ -4,6 +4,7 @@ use App\Http\Controllers\Example\FirstController;
 use App\Http\Controllers\Example\SecondController;
 use App\Http\Controllers\InvokableController;
 use App\Repositories\Test;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,3 +78,14 @@ Route::get('/country', function() {
 })->middleware('country');
 
 require __DIR__.'/auth.php';
+
+//__Route for Session__//
+Route::get('/session-test', function(Request $request) {
+    $request->session()->put('age', '28');
+    // session(['name' => 'osman']);
+    // $request->session()->all();
+});
+Route::get('/session-all', function(Request $request) {
+  return  $request->session()->all();
+//  return $request->session()->flash('status', 'Task was successful!');
+});
