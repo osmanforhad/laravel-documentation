@@ -43,17 +43,23 @@ public function Teacherstore(Request $request)
 //__About sotre__//
 public function Aboutstore(Request $request)
 {
-    // dd($request->all());
-    $data = array();
-    $data['name'] = $request->name;
-    $data['email'] = $request->email;
-    $data['phone'] = $request->phone;
+    $validated = $request->validate([
+        'name' => 'required|max:55',
+        'email' => 'required|email|max:80',
+        'password' => 'required|min:6|max:12',
+    ]);
+
+    dd($request->all());
+    // $data = array();
+    // $data['name'] = $request->name;
+    // $data['email'] = $request->email;
+    // $data['phone'] = $request->phone;
     // dd($data);
     // return redirect()->route('contact.us');
     //  return redirect('/');
     // return redirect()->action([SecondController::class, 'test']);
     // return redirect()->away('https://code2creation.com/');
-     return redirect()->back()->with('status', 'your input is submitted');
+    //  return redirect()->back()->with('status', 'your input is submitted');
 
     // dd($request->email);
     // dd($request->path());
