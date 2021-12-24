@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Example\SecondController;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Log;
 
 class FirstController extends Controller
 {
@@ -49,7 +50,10 @@ public function Aboutstore(Request $request)
         'password' => 'required|min:6|max:12',
     ]);
 
-    dd($request->all());
+    //__Store Login Record__//
+    \Log::channel('aboutstore')->info('the about form submited by: '.rand(1,20));
+    return redirect()->back();
+    // dd($request->all());
     // $data = array();
     // $data['name'] = $request->name;
     // $data['email'] = $request->email;
