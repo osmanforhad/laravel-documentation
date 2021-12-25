@@ -22,7 +22,7 @@
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <!-- @if (Route::has('login'))
+            @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
@@ -34,20 +34,28 @@
                         @endif
                     @endauth
                 </div>
-            @endif -->
+            @endif
             <h1>This is my home page</h1>
+            <!-- @php
+            if(Auth::check()) {
+                echo "Yes Loggedin!!";
+            }
+            @endphp -->
+            @if(Auth::check())
+            <b>Yes Loggedin</b>
+            @endif
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <ul class="list">
-                        <li class="list-item"><a href="{{ url('about') }}">About</a></li>
+                        <!-- <li class="list-item"><a href="{{ url('about') }}">About</a></li>
                         <li class="list-item"><a href="{{ url('profile') }}">Profile</a></li>
-                        <li class="list-item"><a href="{{ URL::to('portfolio') }}">Portfolio</a></li>
+                        <li class="list-item"><a href="{{ URL::to('portfolio') }}">Portfolio</a></li> -->
                         <!-- example of Name Route -->
-                        <li class="list-item"><a href="{{ route('contact.us') }}">Contact</a></li>
+                        <!-- <li class="list-item"><a href="{{ route('contact.us') }}">Contact</a></li>
                         <li class="list-item"><a href="{{ route('our.team') }}">Team</a></li>
-                        <li class="list-item"><a href="{{ route('register-user') }}">Register user</a></li>
+                        <li class="list-item"><a href="{{ route('register-user') }}">Register user</a></li> -->
                         <!-- Example of Route Hashing -->
-                        <li class="list-item"><a href="{{ route('user-location') }}">Location</a></li>
+                        <!-- <li class="list-item"><a href="{{ route('user-location') }}">Location</a></li> -->
                     </ul>
                 </div>
 
